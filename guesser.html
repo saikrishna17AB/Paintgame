@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MediaPaint - Guess!</title>
+    <link rel="stylesheet" href="stylistjeans.css">
+    <link rel="stylesheet" href="guesser.css">
+</head>
+<body>
+
+    <h1>MediaPaint</h1>
+
+    <div class="container">
+
+        <!-- Top Bar: Player info + connection status -->
+        <div class="top-bar">
+            <div class="player-info">
+                👤 <span id="player-name-display">Player</span>
+            </div>
+            <div id="ws-status" class="ws-status">🔴 Disconnected</div>
+        </div>
+
+        <!-- Drawing Display -->
+        <div class="canvas-container">
+            <div class="waiting-overlay" id="waiting-overlay">
+                <span>⏳ Waiting for drawer to start...</span>
+            </div>
+            <img id="drawing-display" alt="Drawing will appear here" />
+        </div>
+
+        <!-- Guess Input Area -->
+        <div class="guess-area">
+            <input
+                type="text"
+                id="guess-input"
+                class="guess-input"
+                placeholder="Type your guess here..."
+                maxlength="50"
+                autocomplete="off"
+            />
+            <button class="guess-btn" onclick="submitGuess()">Guess! 🎯</button>
+        </div>
+
+        <!-- Feedback Message -->
+        <div class="feedback" id="feedback"></div>
+
+        <!-- Chat / Guess Log -->
+        <div class="guess-log" id="guess-log">
+            <div class="guess-log-title">💬 Guesses</div>
+            <div class="guess-log-entries" id="guess-log-entries">
+                <!-- Guess entries will appear here -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="guesser.js"></script>
+
+</body>
+</html>

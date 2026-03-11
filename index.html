@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MediaPaint</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>MediaPaint</h1>
+    <p class="subtitle">Multiplayer Drawing & Guessing Game</p>
+
+    <div class="lobby">
+        <div class="lobby-box">
+
+            <div class="lobby-title">Enter your name to join</div>
+
+            <input
+                type="text"
+                id="playerName"
+                class="name-input"
+                placeholder="Your name..."
+                maxlength="20"
+            />
+
+            <span class="error-msg" id="error-msg">⚠️ Please enter your name first!</span>
+
+            <button class="join-btn" onclick="joinGame()">Join Game 🎮</button>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

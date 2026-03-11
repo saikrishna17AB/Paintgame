@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MediaPaint</title>
+    <link rel="stylesheet" href="stylistjeans.css">
+</head>
+<body>
+    <h1>MediaPaint</h1>
+    <div class="container">
+        
+        <div class="tool">
+            <div class="tools">
+                <label>Colors</label>
+                <div class="color-options">
+                    <div id="blue-color" class="color-btn" style="background-color: #0000ff;" onclick="document.getElementById('colorPicker').value='#0000ff'"></div>
+                    <div id="red-color" class="color-btn" style="background-color: #ff0000;" onclick="document.getElementById('colorPicker').value='#ff0000'"></div>
+                    <div id="green-color" class="color-btn" style="background-color: #00ff00;" onclick="document.getElementById('colorPicker').value='#00ff00'"></div>
+                    <div id="yellow-color" class="color-btn" style="background-color: #ffff00;" onclick="document.getElementById('colorPicker').value='#ffff00'"></div>
+                    <div id="white-color" class="color-btn" style="background-color: #ffffff;" onclick="document.getElementById('colorPicker').value='#ffffff'"></div>
+                    <input type="color" id="colorPicker" value="#ffffff" style="display: none;">
+                </div>
+            </div>
+
+            <div class="tools">
+                <label>Solid</label>
+                <button id="solid" class="tool-btn" onclick="activateSolid()">┃</button>
+            </div>
+
+            <div class="tools">
+                <label>Dotted</label>
+                <button id="dotted" class="tool-btn" onclick="activateDotted()">┇</button>
+            </div>
+
+            <div class="tools">
+                <label>Eraser</label>
+                <button id="eraser" class="tool-btn" title="Eraser" onclick="activateEraser()">
+                🧽
+                </button>
+            </div>
+
+            <div class="tools">
+                <label>Clear</label>
+                <button id="clear" class="clear-btn" title="Clear Canvas" onclick="ClearCanvas()">
+                🗑️
+                </button>
+            </div>
+
+            <div class="tools">
+                <label>Save</label>
+                <button id="save" class="save-btn" title="Save Canvas" onclick="SaveCanvas()">
+                💾
+                </button>
+            </div>
+
+            <div class="tools">
+                <label>Change Brush Size</label>
+                <div class="sizechange">
+                    <button id="size" class="tool-btn" title="Increase Brush Size" onclick="increaseBrushSize()">➕</button>
+                    <button id="size" class="tool-btn" title="Decrease Brush Size" onclick="decreaseBrushSize()">➖</button>
+                </div>
+            </div>
+
+            <div class="tools">
+                <label id="tool-status">Brush Size</label>
+                <label id="tool-size" class="infolabel"></label>
+            </div>
+
+            <div class="tools">
+                <label>Segment Size</label>
+                <label id="segment-size" class="infolabel"></label>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="paintCanvas"></canvas>
+        </div>
+    </div>
+
+    <div id="gesture-output" style="font-size: 24px; margin: 10px; color: white;">
+        Gesture: none
+    </div>
+
+    <div id="virtual-cursor"></div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+    <script src="pencil_logic.js"></script>
+    <script src="handTracking.js"></script>
+
+</body>
+</html>
